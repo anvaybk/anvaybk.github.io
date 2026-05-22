@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>उपनयन संस्कार निमंत्रण</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+@page {
+    size: A4;
+    margin: 6mm;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 12px;
+    background: #fdf6ec;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: #4a2c11;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* MAIN CARD CONTAINER */
+.card-container {
+    max-width: 650px;
+    width: 100%;
+    margin: auto;
+    background: #fffcf7;
+    border: 4px double #b37d14;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(139, 92, 26, 0.15);
+    position: relative;
+    outline: 2px solid #b37d14;
+    outline-offset: -12px;
+}
+
+/* DEITIES / TOP SECTION */
+.deities-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #a62626;
+    padding-bottom: 12px;
+    border-bottom: 2px dashed rgba(179, 125, 20, 0.3);
+    margin-bottom: 14px;
+}
+
+.deity-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.deity-icon {
+    width: 16px;
+    height: 16px;
+    fill: #d49a17;
+}
+
+/* MANTRA BOX */
+.mantra-box {
+    margin: 16px auto;
+    padding: 10px 14px;
+    text-align: center;
+    border-top: 1px solid #b37d14;
+    border-bottom: 1px solid #b37d14;
+    color: #8c4303;
+    font-weight: 600;
+    background: #fff5e6;
+    border-radius: 4px;
+    font-size: 10pt;
+    letter-spacing: 0.2px;
+}
+
+/* GENERAL TEXT */
+.invitation-text {
+    text-align: center;
+    font-size: 11pt;
+    line-height: 1.6;
+    margin: 14px 0;
+    color: #4a2c11;
+}
+
+/* LINEAGE */
+.lineage {
+    margin: 16px 0;
+    padding: 12px;
+    text-align: center;
+    background: #fff3e0;
+    border-left: 4px solid #a62626;
+    border-right: 4px solid #a62626;
+    border-radius: 6px;
+    line-height: 1.6;
+    font-size: 11pt;
+    color: #4a2c11;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.02);
+}
+
+/* NAME SECTION WITH SOFT GLOW ANIMATION */
+.boy-name-section {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px 0;
+    animation: fadeInGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInGlow {
+    0% {
+        transform: scale(0.99);
+        filter: drop-shadow(0 0 2px rgba(166, 38, 38, 0.1));
+    }
+    100% {
+        transform: scale(1.01);
+        filter: drop-shadow(0 0 6px rgba(212, 154, 23, 0.35));
+    }
+}
+
+.boy-name {
+    font-size: 34pt;
+    font-weight: 800;
+    color: #a62626;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(166, 38, 38, 0.15);
+}
+
+.event-title {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 24px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #b37d14, #d49a17);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 13pt;
+    box-shadow: 0 4px 10px rgba(179, 125, 20, 0.2);
+}
+
+/* MUHURTA BOX */
+.muhurta-box {
+    margin: 18px auto;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    border-radius: 12px;
+    background: #fffcf5;
+    border: 2px solid #b37d14;
+    font-size: 11pt;
+    color: #4a2c11;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.muhurta-title {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #a62626;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+/* COUNTDOWN CONTAINER */
+.countdown-container {
+    margin: 15px auto;
+    text-align: center;
+    background: #fff1f1;
+    border: 1px dashed #a62626;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* FAMILY SECTION */
+.family-table {
+    display: table;
+    width: 100%;
+    margin-top: 18px;
+    border-top: 1px solid rgba(179, 125, 20, 0.3);
+    padding-top: 14px;
+}
+
+.family-row {
+    display: table-row;
+}
+
+.family-cell {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 0 12px;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #a62626;
+    margin-bottom: 8px;
+}
+
+.family-names-list {
+    text-align: center;
+    line-height: 1.6;
+    font-size: 10pt;
+    color: #4a2c11;
+}
+
+/* VENUE & MEAL SECTION */
+.split-container-table {
+    display: table;
+    width: 100%;
+    margin-top: 18px;
+    border-top: 1px solid rgba(179, 125, 20, 0.3);
+    padding-top: 14px;
+    background: #fff9f0;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.split-row {
+    display: table-row;
+}
+
+.left-block-cell,
+.right-block-cell {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 0 12px;
+}
+
+.left-block-cell {
+    text-align: left;
+    border-right: 1px dashed rgba(179, 125, 20, 0.4);
+}
+
+.right-block-cell {
+    text-align: right;
+}
+
+.block-heading {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: #a62626;
+    margin-bottom: 6px;
+}
+
+.block-body {
+    line-height: 1.5;
+    font-size: 10pt;
+    color: #4a2c11;
+}
+
+/* FOOTER SECTION */
+.footer-section {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(179, 125, 20, 0.3);
+}
+
+.swagatechhuk-table {
+    display: table;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.swagatechhuk-cell {
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+    line-height: 1.6;
+    font-size: 10pt;
+    font-weight: 600;
+    color: #4a2c11;
+}
+
+/* FINAL LINE */
+.final-line {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #a62626;
+    letter-spacing: 0.5px;
+}
+
+/* DIGITAL ACTION BUTTONS BUTTONS */
+.btn-primary {
+    color: #ffffff;
+    background: #a62626;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 9pt;
+    display: inline-block;
+    margin-top: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #801d1d;
+}
+
+.btn-whatsapp {
+    background: #25D366; 
+    color: white; 
+    padding: 8px 18px; 
+    font-size: 10pt; 
+    border-radius: 25px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #d49a17, #b37d14); 
+    color: white; 
+    padding: 8px 18px; 
+    font-size: 10pt; 
+    border-radius: 25px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+.action-buttons-group {
+    display: flex; 
+    justify-content: center; 
+    gap: 12px; 
+    margin: 15px auto; 
+    flex-wrap: wrap;
+}
+
+.action-btn-contact {
+    background: #4a2c11; 
+    color: white; 
+    padding: 6px 14px; 
+    font-size: 9.5pt; 
+    border-radius: 20px; 
+    text-decoration: none; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 5px;
+    border: 1px solid #b37d14;
+}
+
+/* RESPONSIVE DESIGN FOR MOBILE SCREEN */
+@media (max-width: 768px) {
+    body {
+        padding: 6px;
+    }
+    
+    .card-container {
+        padding: 16px;
+        outline-offset: -8px;
+    }
+
+    .family-cell,
+    .left-block-cell,
+    .right-block-cell,
+    .swagatechhuk-cell {
+        display: block;
+        width: 100%;
+        text-align: center !important;
+        padding: 10px 0;
+        border-right: none !important;
+    }
+    
+    .left-block-cell {
+        border-bottom: 1px dashed rgba(179, 125, 20, 0.4);
+    }
+
+    .boy-name {
+        font-size: 28pt;
+    }
+
+    .event-title {
+        font-size: 11.5pt;
+        padding: 5px 18px;
+    }
+}
+
+/* PRINT OPTIMIZATION (Hides digital buttons during print/screenshot save) */
+@media print {
+    body {
+        background: #ffffff;
+        padding: 0;
+    }
+    .card-container {
+        box-shadow: none;
+        outline-offset: -12px;
+    }
+    .btn-primary, .countdown-container, .btn-whatsapp, .btn-gold, .action-buttons-group, .print-action-box {
+        display: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card-container">
+
+    <!-- TOP SECTION -->
+    <div class="deities-row">
+        <div class="deity-item">
+            <!-- सुंदर पारंपरिक दीप (Lamp) आइकन -->
+            <svg class="deity-icon" viewBox="0 0 24 24">
+                <path d="M12,2A2,2 0 0,0 10,4C10,6.5 12,9 12,9C12,9 14,6.5 14,4A2,2 0 0,0 12,2M12,11c-4.42,0-8,2.24-8,5c0,1.1 0.72,2.11 2,2.83V21A1,1 0 0,0 7,22H17A1,1 0 0,0 18,21V18.83c1.28,-0.72 2,-1.73 2,-2.83C20,13.24 16.42,11 12,11Z"/>
+            </svg>
+            ॥ श्री गणेशाय नमः ॥
+        </div>
+
+        <div class="deity-item">
+            <svg class="deity-icon" viewBox="0 0 24 24">
+                <path d="M12,2A2,2 0 0,0 10,4C10,6.5 12,9 12,9C12,9 14,6.5 14,4A2,2 0 0,0 12,2M12,11c-4.42,0-8,2.24-8,5c0,1.1 0.72,2.11 2,2.83V21A1,1 0 0,0 7,22H17A1,1 0 0,0 18,21V18.83c1.28,-0.72 2,-1.73 2,-2.83C20,13.24 16.42,11 12,11Z"/>
+            </svg>
+            ॥ श्री तुळजाभवानी प्रसन्न ॥
+        </div>
+
+        <div class="deity-item">
+            <svg class="deity-icon" viewBox="0 0 24 24">
+                <path d="M12,2A2,2 0 0,0 10,4C10,6.5 12,9 12,9C12,9 14,6.5 14,4A2,2 0 0,0 12,2M12,11c-4.42,0-8,2.24-8,5c0,1.1 0.72,2.11 2,2.83V21A1,1 0 0,0 7,22H17A1,1 0 0,0 18,21V18.83c1.28,-0.72 2,-1.73 2,-2.83C20,13.24 16.42,11 12,11Z"/>
+            </svg>
+            ॥ श्री बालाजी प्रसन्न ॥
+        </div>
+    </div>
+
+    <!-- MANTRA -->
+    <div class="mantra-box">
+        ॥ ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात् ॥
+    </div>
+
+    <!-- INVITATION -->
+    <div class="invitation-text">
+        <strong>
+            स. न. वि. वि.<br>
+            आमच्या येथे श्री तुळजाभवानी कृपेने आणि
+            सद्गुरु श्री. चैतन्य महाराज देगलूरकर यांच्या
+            आशिर्वादाने,
+        </strong>
+    </div>
+
+    <!-- LINEAGE -->
+    <div class="lineage">
+        <strong>
+            कै. बाळकृष्ण हरबाजी कुलकर्णी व<br>
+            श्रीमती अनुराधा बाळकृष्ण कुलकर्णी यांचे नातू <br>
+            श्री. अन्वय बाळकृष्ण कुलकर्णी व<br>
+            सौ. प्रणाली अन्वय कुलकर्णी यांचे चिरंजीव
+        </strong>
+    </div>
+
+    <!-- NAME SECTION -->
+    <div class="boy-name-section">
+        <div class="boy-name">चि. ओम</div>
+        <div class="event-title">उपनयन संस्कार (मुंज)</div>
+    </div>
+
+    <!-- MUHURTA BOX -->
+    <div class="muhurta-box">
+        <div class="muhurta-title">॥ शुभमुहूर्त ॥</div>
+        मिती ज्येष्ठ शुक्ल ५, शके १९४८, 
+        <strong>शुक्रवार दिनांक १९.०६.२०2६ रोजी</strong><br>
+        <strong>सकाळी ८ वाजून ३८ मिनिटांनी</strong> करण्याचे योजिले आहे.<br><br>
+        <strong> 
+            तरी आपण या शुभमंगल प्रसंगी उपस्थित राहून<br>
+            बटूस शुभाशिर्वाद द्यावेत, ही नम्र विनंती.
+        </strong>
+        
+        <!-- गूगल कैलेंडर रिमाइंडर बटन -->
+        <div style="margin-top: 12px;">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=चि.+ओम+उपनयन+संस्कार+(मुंज)&dates=20260619T030800Z/20260619T083000Z&details=ओमच्या+मुंजीला+नक्की+यायचं+हं!&location=विस्परींग+विंड,+फेज+१+क्लब+हाऊस,+पाषाण,+पुणे" 
+               target="_blank" class="btn-primary" style="color: white;">
+               📅 कॅलेंडरमध्ये नोंदवा (Reminder)
+            </a>
+        </div>
+    </div>
+
+    <!-- LIVE COUNTDOWN TIMER -->
+    <div class="countdown-container">
+        <div style="font-size: 10pt; font-weight: bold; color: #a62626; margin-bottom: 5px;">⏳ मंगल सोहळा सुरू होण्यास उर्वरित वेळ:</div>
+        <div id="timer" style="font-size: 13pt; font-weight: 800; color: #8c4303; letter-spacing: 0.5px;">गणना होत आहे...</div>
+    </div>
+
+    <!-- FAMILY SECTION -->
+    <div class="family-table">
+        <div class="family-row">
+            <div class="family-cell" style="border-right: 1px dashed rgba(179, 125, 20, 0.4);">
+                <div class="section-heading">* आपले विनीत *</div>
+                <div class="family-names-list">
+                    <strong>श्रीमती अनुराधा बाळकृष्ण कुलकर्णी</strong><br>
+                    वरील विनंतीस मान देऊन कार्यास अगत्य येण्याचे करावे.
+                </div>
+            </div>
+
+            <div class="family-cell">
+                <div class="section-heading">* आपले कृपाभिलाषी *</div>
+                <div class="family-names-list">
+                    <strong>
+                        सौ. प्रणाली व श्री. अन्वय बाळकृष्ण कुलकर्णी<br>
+                        सौ. अमृता व श्री. अमोल बाळकृष्ण कुलकर्णी<br>
+                        कु. श्राव्या अमोल कुलकर्णी व समस्त कुलकर्णी परिवार
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VENUE & MEAL SECTION -->
+    <div class="split-container-table">
+        <div class="split-row">
+            <div class="left-block-cell">
+                <div class="block-heading">📍 कार्यस्थळ</div>
+                <div class="block-body">
+                    <strong>विस्परींग विंड, फेज १ क्लब हाऊस</strong><br>
+                    सर्व्हे नंबर १३५/२, पाषाण-बाणेर लिंक रोड, <br> पाषाण, पुणे - ४११०२१<br>
+                    <a href="https://maps.app.goo.gl/qKVE82eXsnFDTUpK9" target="_blank" class="btn-primary" style="color: white;">🗺️ Google Maps</a>
+                </div>
+            </div>
+
+            <div class="right-block-cell">
+                <div class="block-heading">🍽️ स्नेह भोजन</div>
+                <div class="block-body">
+                    <strong>वेळ:</strong><br>सकाळी ११:०० ते दुपारी २:०० वाजेपर्यंत
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIGITAL BLESSINGS & RSVP -->
+    <div style="text-align: center; margin: 20px 0 10px 0;">
+        <div style="font-size: 10pt; color: #4a2c11; margin-bottom: 6px; font-weight: bold;">दूरूनच आपले शुभ आशीर्वाद किंवा उपस्थिती पाठवण्यासाठी:</div>
+        <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+            <a href="https://wa.me/919850001524?text=चि.+ओम+याला+उपनयन+संस्कारानिमित्त+खूप+खूप+शुभेच्छा+व+आशीर्वाद!" 
+               target="_blank" class="btn-gold">
+               ✨ बटूस डिजिटल आशीर्वाद द्या ✨
+            </a>
+            <a href="https://wa.me/919850001524?text=आम्ही+ओमच्या+मुंजीला+नक्की+येणार!" 
+               target="_blank" class="btn-whatsapp">
+               🟢 RSVP (नक्की येणार)
+            </a>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <div class="footer-section">
+        <div class="section-heading">* स्वागतेच्छुक *</div>
+        <div class="swagatechhuk-table">
+            <div class="family-row">
+                <div class="swagatechhuk-cell">
+                    सौ. अपर्णा व श्री. विवेक वसंतराव कुलकर्णी<br>
+                    सौ. अर्चना व श्री. रविंद्र विश्वनाथराव देशमुख<br>
+                    श्रीमती अश्विनी अभय कुलकर्णी
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK CONTACT CALL BUTTONS -->
+        <div class="action-buttons-group">
+            <a href="tel:+919850001524" class="action-btn-contact">📞 श्री. अन्वय (9850001524)</a>
+            <a href="tel:+919922136708" class="action-btn-contact">📞 श्री. अमोल (9922136708)</a>
+        </div>
+
+        <!-- FINAL LINE -->
+        <div class="final-line">✨ ओमच्या मुंजीला यायचं हं! ✨</div>
+        <div class="block-body" style="text-align:center; margin-top: 4px; font-weight: 600;">
+            कु. अरुणिमा, चि. आशुतोष, चि. अद्वैत, चि. वरद
+        </div>
+    </div>
+
+</div>
+
+<!-- SAVE / PRINT PDF SHORTCUT BUTTON -->
+<div class="print-action-box" style="text-align: center; margin: 20px 0 10px 0;">
+    <button onclick="window.print()" style="background: #4a2c11; color: #fffcf7; border: 1px solid #b37d14; padding: 8px 16px; font-size: 10pt; border-radius: 6px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        🖨️ आमंत्रण पत्र जतन करा (Save / Print PDF)
+    </button>
+</div>
+
+<!-- COUNTDOWN TIMER SCRIPT -->
+<script>
+    // समारोह समय: 19 जून 2026, सुबह 08:38
+    var countDownDate = new Date("June 19, 2026 08:38:00").getTime();
+
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "✨ आज शुभ उपनयन सोहळा आहे! ✨";
+        } else {
+            document.getElementById("timer").innerHTML = days + " दिवस " + hours + " तास " + minutes + " मिनिटे " + seconds + " सेकंद ";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
+
+```
