@@ -1,52 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG0F36EQ5C"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VG0F36EQ5C');
-</script>	
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG0F36EQ5C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VG0F36EQ5C');
+    </script>	
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <title>Anvay Kulkarni - Freelance Software Quality Management Expert</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Optional Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #fff;
         }
         .section-title {
-            margin-top: 50px;
+            margin-top: 30px;
+            margin-bottom: 40px;
             font-size: 2.5rem;
-            font-weight: bold;
+            font-weight: 600;
             text-align: center;
+            color: #212529;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #0d6efd;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
         }
         .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: #495057;
+            text-align: justify;
+        }
+        .card {
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background-color: #fff;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #212529;
+        }
+        .card-text {
+            font-size: 0.95rem;
+            color: #495057;
+            text-align: justify;
+        }
+        
+        /* Fixed Aspect-Ratio Containment Rules for Live Project Images */
+        .project-img-frame {
+            width: 100%;
+            height: 220px; /* Fixed matching row baseline height */
+            background-color: #f8f9fa; /* Prevents visual gaps if image shapes differ */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 15px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom: 1px solid rgba(0,0,0,.08);
+        }
+        .project-img-frame img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Forces full image to scale responsibly inside frame bounds without stretching */
+        }
+        
+        .contact-link {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0d6efd;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .contact-link:hover {
+            color: #0a58ca;
+            text-decoration: underline;
         }
         .footer {
-            background-color: #343a40;
+            background-color: #212529;
             color: #fff;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
+        }
+        .footer a {
+            transition: opacity 0.2s;
+        }
+        .footer a:hover {
+            opacity: 0.85;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Anvay Kulkarni</a>
+            <a class="navbar-brand fw-bold text-uppercase tracking-wider" href="#">Anvay Kulkarni</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -61,255 +130,190 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-3">Anvay Kulkarni</h1>
-            <p class="lead">Experienced Freelance Software Quality Management Expert</p>
+        <div class="container py-4">
+            <h1 class="display-3 fw-bold mb-2">Anvay Kulkarni</h1>
+            <p class="lead fs-3 fw-light">Freelance Software Quality Management & App Development Expert</p>
         </div>
     </header>
 
-    <!-- About Section -->
     <section id="about" class="container py-5">
         <h2 class="section-title">About Me</h2>
-        <div class="row">
+        <div class="row g-4">
             <div class="col-lg-6">
-                <p class="about-text" align="justify">I am a Senior QA Manager with over a decade of experience in software testing, production support, and delivery management across diverse industries including healthcare, airline travel, insurance, banking & finance, retail, logistics, e-commerce, ERP, and artificial intelligence.</p>
-                <p class="about-text" align="justify">Throughout my career, I’ve led and scaled high-performing QA teams—most notably managing a 40-member engineering team at VIBRENT Health—where I drove major improvements in product quality and customer satisfaction. As Head of QA & Production Support, I oversaw 20+ product applications, streamlining delivery of releases, patches, and hotfixes while significantly reducing customer complaints through robust QA processes.</p>
-				
-				<p class="about-text" align="justify">My core competencies include Agile Scrum methodologies, root cause analysis, defect mitigation, and end-to-end project planning. I’m proficient in Selenium, Java, JMeter, AWS infrastructure, and advanced test automation frameworks that have helped reduce testing time by 30% and speed up product release cycles.</p>
+                <p class="about-text fw-semibold text-primary mb-3" style="font-size: 1.15rem;">Full-Stack Application Development & Architecture</p>
+                <p class="about-text">Beyond enterprise consulting, I operate as an expert mobile and web application architect specializing in lightweight, high-performance digital solutions. Leveraging a robust tech stack consisting of <strong>HTML, CSS, JavaScript, and native Android development tools</strong>, I design, build, and deploy custom applications optimized for smooth distribution and flawless real-world utility.</p>
+                <p class="about-text">My core development focus centers on bridging the gap between web agility and native performance using <strong>Progressive Web App (PWA) architectures</strong> and trusted Google Play Store deployment pipelines. To date, my live production software applications have achieved critical success, establishing a global footprint and securing over <strong>13,000+ active users</strong> who rely daily on their fast, offline-first execution and fluid touch interfaces.</p>
+                <p class="about-text">Whether building custom operational platforms for scaling small businesses, structuring specialized digital solutions, or engineering complex technical minimum viable products (MVPs), I deliver scalable, production-ready source code designed for maximum responsiveness across both iOS and Android ecosystems.</p>
             </div>
+            
             <div class="col-lg-6">
-                <p class="about-text" align="justify">I have worked across various sectors including E-Travel, Healthcare, Finance, Retail, ERP, E-Commerce, and AI. I have managed test environments, deployed applications, and worked with cloud platforms like AWS, Rackspace, and more. Additionally, I recently developed the "Gurucharitra Saramrut" Android app, showcasing my versatility in mobile development.</p>
-				
-				<p class="about-text" align="justify">With hands-on experience in mobile and web testing across iOS, Android, and web platforms, I’ve contributed to the delivery of 20+ apps. I’ve also led testing for big data and microservices applications and ensured healthcare software compliance with HIPAA, HITECH, and ISO 13485 standards.</p>
-				
-				<p class="about-text" align="justify">Beyond professional projects, I’ve developed web and mobile apps using HTML, CSS, JavaScript, and Android, including a devotional app with over 6,750 users. I’m passionate about delivering high-quality digital solutions and fostering collaborative, customer-focused QA environments.
-</p>
+                <p class="about-text fw-semibold text-primary mb-3" style="font-size: 1.15rem;">Strategic Software Quality Management & Advisory</p>
+                <p class="about-text">Complementing my engineering background is a distinguished career as a Senior QA Manager with over a decade of hands-on experience driving comprehensive software testing architectures, cross-platform production support, and business-focused delivery solutions across complex global industries.</p>
+                <p class="about-text">I specialize in scaling elite quality engineering units—most notably directing a 40-member technical delivery group at Vibrent Health. Serving as the strategic Head of QA & Production Support, I managed over 20 concurrent product applications, accelerating hotfix pipelines and directly slashing client defect escape rates. By engineering frameworks using Selenium, Java, and JMeter on cloud environments (AWS), I consistently reduce testing cycles and regression timelines by <strong>30%</strong>.</p>
+                <p class="about-text">My deep domain competence spans E-Travel, FinTech, E-Commerce, ERP, and Artificial Intelligence, with deep validation expertise in highly regulated frameworks including strict <strong>HIPAA, HITECH, and ISO 13485</strong> compliance alongside comprehensive <strong>Section 508 / WCAG</strong> digital accessibility standards.</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="bg-light py-5">
-        <h2 class="section-title">Skills & Expertise</h2>
         <div class="container">
-            <div class="row">
-				<div class="col-md-4">
-                    <div class="card mb-4">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">PWA & Android App Development</h5>
-                            <p class="card-text"align="justify" >Build Progressive Web Apps and Android applications using HTML, CSS, JavaScript, and native Android tools—ideal for small business or devotional/personal apps.</p>
+                            <h5 class="card-title text-primary">PWA & Android App Architecture</h5>
+                            <p class="card-text">Developing lightweight, secure Progressive Web Apps and native Android distributions configured for seamless offline-first execution, quick installation, and store delivery.</p>
                         </div>
                     </div>
                 </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Website Testing & Performance Optimization</h5>
-                            <p class="card-text" align="justify">Conduct cross-browser, responsive, and performance testing to ensure websites function flawlessly across all platforms and devices.</p>
+                            <h5 class="card-title text-primary">Automation Framework Engineering</h5>
+                            <p class="card-text">Designing structural regression automation frameworks using Selenium, Java, and JMeter designed to eliminate repetitive engineering overhead and optimize production speeds.</p>
                         </div>
                     </div>
                 </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">End-to-End Software Testing (Manual & Automation)</h5>
-                            <p class="card-text" align="justify">Offer full-cycle QA services including test planning, execution, defect tracking, and reporting for web, mobile, and enterprise applications.</p>
+                            <h5 class="card-title text-primary">Cross-Browser & Performance Web QA</h5>
+                            <p class="card-text">Executing deterministic device compatibility diagnostics, fluid layout validation, and load performance modeling across complex modern browser variations.</p>
                         </div>
                     </div>
                 </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Healthcare QA & Compliance Testing</h5>
-                            <p class="card-text" align="justify">Provide specialized QA services for healthcare software, including HIPAA/HITECH compliance, accessibility (508/WCAG) testing using NVDA, Wave, etc.</p>
+                            <h5 class="card-title text-primary">Healthcare Compliance Validation</h5>
+                            <p class="card-text">Providing targeted validation for regulated tools including strict HIPAA framework processing, data transit auditing, and assistive verification via toolsets like NVDA and WAVE.</p>
                         </div>
                     </div>
                 </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Custom Test Strategy & Documentation</h5>
-                            <p class="card-text" align="justify">Develop test strategies, plans, and QA documentation tailored to project size and business goals—ideal for startups or product MVPs.</p>
+                            <h5 class="card-title text-primary">Advisory Test Strategies & Modeling</h5>
+                            <p class="card-text">Authoring custom-fit test maps, hazard assessments, and quality blueprints engineered explicitly around lean budget startup scopes and minimum viable products (MVPs).</p>
                         </div>
                     </div>
                 </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Production Support & Hotfix Management</h5>
-                            <p class="card-text" align="justify">Support ongoing applications by troubleshooting issues, coordinating hotfixes, and ensuring SLA-based response times for critical defects.</p>
+                            <h5 class="card-title text-primary">Cloud Architecture & CI/CD Pipelines</h5>
+                            <p class="card-text">Deploying validation nodes natively inside system integration models across Amazon Web Services (AWS) using EC2 compute grids, secure S3 clusters, and relational database setups.</p>
                         </div>
                     </div>
                 </div>
-				
-				 <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Project Management</h5>
-                            <p class="card-text" align="justify">Expertise in managing projects through Agile methodologies, using tools like JIRA and Confluence to ensure transparency and successful delivery.</p>
-                        </div>
-                    </div>
-                </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Test Automation Development</h5>
-                            <p class="card-text" align="justify">Design and implement custom automation frameworks using Selenium, Java, and JMeter to reduce manual testing and speed up release cycles.</p>
-                        </div>
-                    </div>
-                </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">CI/CD Integration & QA Automation Setup</h5>
-                            <p class="card-text" align="justify">Help teams set up automated pipelines for continuous testing using Jenkins, GitHub Actions, or other DevOps tools.</p>
-                        </div>
-                    </div>
-                </div>
-				
-				
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Software Testing</h5>
-                            <p class="card-text" align="justify">Extensive experience in Manual Testing, Automation Testing, Security Testing, and API Testing across diverse domains.</p>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Cloud Computing</h5>
-                            <p class="card-text" align="justify">Hands-on experience with AWS infrastructure services such as EC2, S3, RDS, VPC, and Cloud Deployment.</p>
-                        </div>
-                    </div>
-                </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">QA Mentoring & Team Training</h5>
-                            <p class="card-text" align="justify">Offer freelance mentoring or team upskilling sessions on QA best practices, automation tools, Agile testing, and performance analysis.</p>
-                        </div>
-                    </div>
-                </div>
-				
-				<div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Agile QA & Project Coordination</h5>
-                            <p class="card-text" align="justify">Provide Agile QA support for startups and growing teams—manage sprints, user story validation, test execution, and client demos.</p>
-                        </div>
-                    </div>
-                </div>
-				
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="container py-5">
         <h2 class="section-title">Featured Projects</h2>
-        <div class="row">
+        <div class="row g-4">
             <div class="col-md-4">
-                <div class="card">
-                    <img src="images/Gurucharitra-Image.png" class="card-img-top" alt="Gurucharitra Saramrut"><hr>
-                    <div class="card-body">
-                        <h5 class="card-title" style="color:darkblue"> Shri Gurucharitra Saramrut </h5><hr>
-                        <p class="card-text" align="justify"> Shri Gurucharitra Saramrut online app, the ultimate destination for in depth exploration of the sacred texts and associated services of Gurucharitra. Our platform offers a well organized collection of the Gurucharitra Saramrut & detailed information on various Parayan Sevas.
-						<!-- Developed an Android app integrating Progressive Web App (PWA) technologies for seamless offline access to the sacred text of Gurucharitra Saramrut. --> </p> <hr>
-						<p> <a href="https://play.google.com/store/apps/details?id=io.github.anvaybk.gurucharitra.twa" target="_blank" style="text-decoration: none; color: inherit;"> <img src="images/google-play.png" align="center" alt="Gurucharitra Saramrut" style="width: 145px; height: 41px; border-radius: 12px;"><br> <br> <small> Gurucharitra Saramrut / <br>  गुरुचरित्र सारामृत (Live) </small>
-						</a> </p>
+                <div class="card h-100">
+                    <div class="project-img-frame">
+                        <img src="images/Gurucharitra-Image.png" alt="Shri Gurucharitra Saramrut">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title text-primary mb-3">Shri Gurucharitra Saramrut</h5>
+                            <p class="card-text">A high-performance interactive spiritual exploration platform featuring full offline operational caches, text parsers, and intuitive tracking structures for organized Parayan Sevas.</p>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="https://play.google.com/store/apps/details?id=io.github.anvaybk.gurucharitra.twa" target="_blank" class="d-inline-block">
+                                <img src="images/google-play.png" alt="Get it on Google Play" style="width: 145px; height: 41px; border-radius: 6px;">
+                            </a>
+                            <div class="mt-2 text-muted small fw-bold">Live Production App</div>
+                        </div>
                     </div>
                 </div>
             </div>
-			<br>
-			<!-- Add more project cards here  -->
-		<div class="col-md-4">
-                <div class="card">
-                    <img src="images/Nityastotra_Image.png" class="card-img-top" alt="Sanchareshwar Charitramrut"> <hr>
-                    <div class="card-body">
-                        <h5 class="card-title" align="justify" style="color:darkblue"> Nitya Stotra Sangrah </h5> <hr>
-                        <p class="card-text"> Nitya Stotra is a spiritual app that offers a curated collection of sacred stotras (devotional hymns) ideal for daily puja. <br> Developed an Android app integrating Progressive Web App (PWA) technologies for seamless offline access to the sacred text of Nitya Stotra Sangrah.</p> <hr>
-						<p> <a href="https://play.google.com/store/apps/details?id=io.github.anvaybk.stotra.twa" target="_blank" style="text-decoration: none; color: inherit;"> <img src="images/google-play.png" align="center" alt="Sanchareshwar Charitramrut" style="width: 145px; height: 41px; border-radius: 12px;"><br><br> <small> Nitya Stotra / नित्य स्तोत्र  - <br> (Coming...). </small>
-						</a> </p>
+            
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="project-img-frame">
+                        <img src="images/Nityastotra_Image.png" alt="Nitya Stotra Sangrah">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title text-primary mb-3">Nitya Stotra Sangrah</h5>
+                            <p class="card-text">A fast Progressive Web App (PWA) solution serving as a digital devotional archive compiled to operate with consistent execution across varying network speeds.</p>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="https://play.google.com/store/apps/details?id=io.github.anvaybk.stotra.twa" target="_blank" class="d-inline-block">
+                                <img src="images/google-play.png" alt="Get it on Google Play" style="width: 145px; height: 41px; border-radius: 6px;">
+                            </a>
+                            <div class="mt-2 text-muted small fw-bold">Live Production App</div>
+                        </div>
                     </div>
                 </div>
             </div>
-			<br>
-            <!-- Add more project cards here  -->
-		<div class="col-md-4">
-                <div class="card">
-                    <img src="images/Sanchareshwar_Image.png" class="card-img-top" alt="Sanchareshwar Charitramrut"><hr>
-                    <div class="card-body">
-                        <h5 class="card-title" style="color:darkblue"> Sanchareshwar Charitramrut </h5> <hr>
-                        <p class="card-text" > Sanchareshwar Charitramrut is a spiritual app dedicated to Shri Sadguru Sanchareshwar Maharaj's life, teachings, and divine mission. This app brings together sacred texts, devotional literature, and multimedia content that reflects Sanatan Dharma, Bhakti Yoga, and national awakening. <!-- Developed an Android app integrating Progressive Web App (PWA) technologies for seamless offline access to the sacred text of Sanchareshwar Charitramrut. --> </p><hr>
-						<p> <a href="https://play.google.com/store/apps/details?id=io.github.anvaybk.sanchareshwar.twa" target="_blank" style="text-decoration: none; color: inherit;"> <img src="images/google-play.png" align="center" alt="Sanchareshwar Charitramrut" style="width: 145px; height: 41px; border-radius: 12px;"><br> <br> <small>Sanchareshwar Charitramrut / <br> संचारेश्वर चरित्रामृत - (Live) </small>
-						</a> </p>
+            
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="project-img-frame">
+                        <img src="images/Sanchareshwar_Image.png" alt="Sanchareshwar Charitramrut">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title text-primary mb-3">Sanchareshwar Charitramrut</h5>
+                            <p class="card-text">A lightweight cross-platform digital presentation engine offering low-latency text rendering, background assets, and smooth touch responsive features for global distributions.</p>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="https://play.google.com/store/apps/details?id=io.github.anvaybk.sanchareshwar.twa" target="_blank" class="d-inline-block">
+                                <img src="images/google-play.png" alt="Get it on Google Play" style="width: 145px; height: 41px; border-radius: 6px;">
+                            </a>
+                            <div class="mt-2 text-muted small fw-bold">Live Production App</div>
+                        </div>
                     </div>
                 </div>
             </div> 
-			
-		 
-			
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="bg-light py-5">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2> <br>
-            <p>If you're looking to collaborate on a project or need help with Software App Development OR Quality Management, feel free to reach out.</p>
-			
-			<p> 📞 : <a href="tel:+91-9850001524">+91-9850001524</a></p>
-			
-			<p> 📧 : <a href="mailto:anvaybkulkarni@gmail.com" data-rel="external">anvaybkulkarni@gmail.com</a><br /></P>
-
-			<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="25" style="vertical-align:middle;"> +91-9850001524 
-		
-		    <!--Mobile, 📞 Email 📧 <p>Email: mailto:anvaybkulkarni@gmail.com</p>  -->
-			
-           <!-- <form action="#" method="POST">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <input type="text" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <input type="email" class="form-control" placeholder="Your Email" required>
-                    </div>
-                    <div class="col-12 mb-3">
-                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+        <div class="container text-center py-3">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="lead max-w-md mx-auto mb-5 text-muted" style="max-width: 600px; margin: 0 auto 30px auto;">If you are seeking an expert engineer to upgrade your platform quality engineering frameworks, establish cloud systems compliance, or deploy custom high-performance mobile PWA applications, contact me directly below.</p>
+            
+            <div class="row justify-content-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm border">
+                        <div class="fs-2 mb-2">📞</div>
+                        <div class="text-muted small text-uppercase font-weight-bold">Phone Workspace</div>
+                        <a href="tel:+91-9850001524" class="contact-link">+91-9850001524</a>
                     </div>
                 </div>
-            </form> -->
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm border">
+                        <div class="fs-2 mb-2">📧</div>
+                        <div class="text-muted small text-uppercase font-weight-bold">Email Workspace</div>
+                        <a href="mailto:anvaybkulkarni@gmail.com" class="contact-link">anvaybkulkarni@gmail.com</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-	<p> <a href="https://wa.me/919850001524?text=Thank%20you%20for%20contacting.%20How%20can%20I%20help%20you?" 
-	    target="_blank" style="text-decoration: none; color: #25D366; font-weight: bold;">
-	    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-	    alt="WhatsApp Help" width="20" style="vertical-align: middle;"> Chat on WhatsApp </a> </p>     
-        <p>&copy; 2025 Anvay Kulkarni. All Rights Reserved.</p>
-		<!-- <p>Mobile: +91-9850001524</p> -->
-		<!-- <p>Email: anvaybkulkarni@gmail.com</p> -->
+        <div class="container">
+            <p class="mb-3"> 
+                <a href="https://wa.me/919850001524?text=Hi%20Anvay,%20I%20viewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." 
+                   target="_blank" style="text-decoration: none; color: #25D366; font-weight: 600; font-size: 1.1rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Help" width="22" style="vertical-align: middle; margin-right: 5px;"> 
+                    Chat on WhatsApp 
+                </a> 
+            </p>     
+            <p class="mb-0 text-muted small">&copy; 2026 Anvay Kulkarni. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html>	
